@@ -13,7 +13,7 @@
 | 2 | python -m venv имя_окружения | **На Ubuntu отдельно нужно установить модуть venv командой:* <br>sudo apt install python3-venv <br><br> python3 -m venv имя_окружения|
 | 3 | имя_окружения\Scripts\activate.bat | source имя_окружения/bin/activate | 
 | 4 | pip install -r requirements.txt | pip3 install -r requirements.txt |
-| 5 | запустить файл __init__.py | запустить файл __init__.py |
+| 5 | запустить файл '__init__.py' | запустить файл '__init__.py' |
 
 cd - команда командной строки для изменения рабочего каталога <br>
 mkdir - команда командной строки для создания каталога
