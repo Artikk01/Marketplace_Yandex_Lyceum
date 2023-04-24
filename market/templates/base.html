@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {% block title %}{% endblock %}
+    <link rel="stylesheet" type="text/css" href="../static/css/main.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/header.css">
+    {% block style_css %}{% endblock %}
+</head>
+<body>
+    <header class="header">
+        <div class="header__left">
+          <h1 class="header__logo"><a href="/">MarketHub</a></h1>
+        </div>
+        <button class="header__toggle" aria-label="Открыть меню">
+          <span class="header__toggle-icon"></span>
+        </button>
+        <nav class="header__right">
+          <ul class="header__menu">
+            <li><a href="{{ url_for('cart') }}">Корзина</a></li>
+            <li><a href="{{ url_for('about') }}">О нас</a></li>
+            {% if current_user.is_authenticated %}
+              <li><a href="{{ url_for('lc') }}">{{ current_user.username }}</a></li>
+            {% else %}
+              <li><a href="{{ url_for('login') }}">Войти</a></li>
+            {% endif %}
+          </ul>
+        </nav>
+    </header>
+    {% block content %}{% endblock %}
+    <footer>
+        <p>&copy; 2023 MarketHub. Все права защищены.</p>
+    </footer>
+
+<script src="../static/js/header.js"></script>
+{% block scripts_js %}{% endblock %}
+</body>
+</html>

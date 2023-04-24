@@ -1,0 +1,27 @@
+body {
+	background-color: #ffffff;
+	color: #000000;
+}
+
+a {
+	color: #000 !important;
+	text-decoration: none;
+}
+
+main {
+	padding: 50px 50px 0 50px;
+}
+
+section {
+	margin-bottom: 50px;
+}
+
+h2 {
+	font-size: 24px;
+	margin-bottom: 20px;
+}
+
+p {
+	font-size: 16px;
+	line-height: 1.5;
+}

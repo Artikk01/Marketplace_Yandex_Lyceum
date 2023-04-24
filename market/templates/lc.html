@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+<title>Личный кабинет</title>
+{% endblock %}
+
+{% block style_css %}
+<link rel="stylesheet" type="text/css" href="../static/css/lc.css">
+{% endblock %}
+
+{% block content %}
+<main>
+    <h2>Добро пожаловать, {{ current_user.username }}!</h2>
+    <p>Ваш email: {{ current_user.email }}</p>
+    <p><a href="{{url_for('logout')}}"><u>Выйти</u></a></p>
+    <h3>Изменить данные</h3>
+    <p style="color: rgb(16, 95, 26);">{{ mess }}</p>
+    <form method="POST" action="">
+        {{ form.csrf_token }}
+        <label>Имя пользователя:</label>
+        {{ form.username }}
+        <label>Email:</label>
+        {{ form.email }}
+        <label>Пароль:</label>
+        {{ form.password }}
+        {{ form.submit() }}
+      </form>
+</main>
+{% endblock %}

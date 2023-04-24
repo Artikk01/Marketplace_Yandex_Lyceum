@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../static/css/main.css">
+  <link rel="stylesheet" type="text/css" href="../static/css/products.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="product-page">
+        <div class="product-image">
+          <img src="data:image/png;base64,{{ product.image }}" alt="Product Image">
+        </div>
+        <div class="product-details">
+          <h1 class="product-name">{{ product.name}}</h1>
+          <p class="product-description">{{ product.description}}</p>
+          <div class="product-pricing">
+            <p class="product-price">{{ product.price}} руб.</p>
+            <div class="product-quantity">
+              <button class="quantity-button minus-button">-</button>
+              <input type="text" class="quantity-input" value="1">
+              <button class="quantity-button plus-button">+</button>
+            </div>
+            <button class="add-to-cart-btn">В корзину</button>
+          </div>
+        </div>
+      </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+  

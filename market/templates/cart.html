@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+  <title>Корзина товаров</title>
+{% endblock %}
+
+{% block style_css %}
+  <link rel="stylesheet" type="text/css" href="../static/css/cart.css">
+{% endblock %}
+
+{% block content %}
+<main>
+  <h1>Корзина товаров</h1>
+<section class="cart">
+  {% for product in products %}
+
+  <div class="product" data-product-id="{{ product.id }}">
+    <img src="data:image/png;base64,{{ product.image }}" alt="Товар">
+    <div>
+      <h2 class="product-name">{{ product.name}}</h2>
+      <p >Цена: <span class="product-price">{{ product.price}}</span> руб.</p>
+    </div>
+    <div class="quantity">
+        <button class="minus-btn" type="button">-</button>
+        <input type="text" value="{{ quantity[product.id|string]['quantity']}}">
+        <button class="plus-btn" type="button">+</button>
+    </div>
+    <button class="delete">Удалить</button>
+  </div>
+
+  {% endfor %}
+</section>
+  <div>
+    <p><span id="total-price">0</span> руб.</p>
+    <button class="design">Оформить заказ</button>
+  </div>
+</main>
+{% endblock %}
+
+{% block scripts_js %}
+  <script src="../static/js/cart.js"></script>
+{% endblock %}
